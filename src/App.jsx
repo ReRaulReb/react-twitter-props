@@ -14,6 +14,7 @@ function App() {
     const [loggedInUser] = useState(user)
     const [tweets, setTweets] = useState(initialTweets)
     const [createTweetContent, setCreateTweetContent] = useState('')
+    const [searchFilter, setSearchFilter] = useState('')
 
     const addTweet = (e) => {
         e.preventDefault()
@@ -31,6 +32,9 @@ function App() {
         ])
     }
 
+    const tweetsSearchFiltered = tweets.filter((t) => t.content.toLowerCase().includes(searchFilter.toLowerCase()));
+    const tweetsFinished = tweetsSearchFiltered.length > 0 ? tweetsSearchFiltered : tweets;
+
     return (
         <div className="container">
             
@@ -40,9 +44,9 @@ function App() {
             loggedInUser={loggedInUser} 
             createTweetContent={createTweetContent}
             setCreateTweetContent={setCreateTweetContent}
-            tweets={tweets}/>
+            tweets={tweetsFinished}/>
 
-            <RightSide user = {loggedInUser}/>
+            <RightSide user = {loggedInUser} searchFilter={searchFilter} setSearchFilter={setSearchFilter}/>
 
         </div>
     )

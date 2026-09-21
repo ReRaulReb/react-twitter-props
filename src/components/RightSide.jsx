@@ -4,10 +4,11 @@ import WhatsHappening from './WhatsHappening'
 import WhoToFollow from './WhoToFollow'
 import Search from './Search'
 
-export default function RightSide({user}){
+export default function RightSide({user,
+    searchFilter, setSearchFilter}){
 	return(
             <aside className='right-side'>
-                <Search/>
+                <Search searchFilter = {searchFilter} setSearchFilter = {setSearchFilter}/>
 
                 <div className='widget'>
                     <div className="widget-grid">
