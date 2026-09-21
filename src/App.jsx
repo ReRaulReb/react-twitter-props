@@ -33,18 +33,17 @@ function App() {
     }
 
     const tweetsSearchFiltered = tweets.filter((t) => t.content.toLowerCase().includes(searchFilter.toLowerCase()));
-    const tweetsFinished = tweetsSearchFiltered.length > 0 ? tweetsSearchFiltered : tweets;
 
     return (
         <div className="container">
-            
+
             <LeftSide user = {loggedInUser}/>
 
             <Middle addTweet={addTweet}
             loggedInUser={loggedInUser} 
             createTweetContent={createTweetContent}
             setCreateTweetContent={setCreateTweetContent}
-            tweets={tweetsFinished}/>
+            tweets={tweetsSearchFiltered}/>
 
             <RightSide user = {loggedInUser} searchFilter={searchFilter} setSearchFilter={setSearchFilter}/>
 

@@ -1,6 +1,6 @@
 export default function TweetActions({tweet}){
 	return(
-		<div classname="tweet-actions">
+		<div className="tweet-actions">
 		    <span>
 			<i className="fa-regular fa-comment"></i>
 			<small>{tweet.commentCount}</small>
