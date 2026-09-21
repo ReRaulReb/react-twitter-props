@@ -42,7 +42,7 @@ function App() {
             setCreateTweetContent={setCreateTweetContent}
             tweets={tweets}/>
 
-            <RightSide/>
+            <RightSide user = {loggedInUser}/>
 
         </div>
     )
